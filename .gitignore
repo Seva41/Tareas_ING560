@@ -399,3 +399,5 @@ FodyWeavers.xsd
 
 # macOS folder attributes
 .DS_Store
+
+.ipynb_checkpoints/
