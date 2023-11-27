@@ -17,8 +17,8 @@ def rosenbrock_gradient(x, y, a=1, b=100):
 # Definición de los parámetros iniciales
 np.random.seed(0)
 initial_point = np.random.rand(2) * 2 - 1  # Punto inicial aleatorio en [-1, 1]
-learning_rate = 0.001
-iterations = 10000
+learning_rate = 0.002
+iterations = 1000000
 threshold = 1e-6
 
 # Bucle de optimización
