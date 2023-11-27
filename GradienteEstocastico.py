@@ -33,8 +33,8 @@ for i in range(iterations):
     point = new_point
 
 # Graficar la función de Rosenbrock y el punto mínimo encontrado
-x = np.linspace(-2, 2, 400)
-y = np.linspace(-1, 3, 400)
+x = np.linspace(-1, 2, 400)
+y = np.linspace(-1, 2, 400)
 X, Y = np.meshgrid(x, y)
 Z = rosenbrock(X, Y)
 
@@ -43,7 +43,13 @@ plt.contour(X, Y, Z, levels=np.logspace(-0.5, 3.5, 20), cmap="viridis")
 plt.plot(
     *zip(*points_history), marker="o", color="r", markersize=5, label="Camino al mínimo"
 )
-plt.plot(points_history[-1][0], points_history[-1][1], "ro")  # Punto final
+final_point = points_history[-1]
+plt.plot(
+    points_history[-1][0],
+    points_history[-1][1],
+    "bo",
+    label=f"Punto mínimo: ({final_point[0]:.4f}, {final_point[1]:.4f})",
+)  # Punto final en azul
 plt.title("Camino al mínimo de la función de Rosenbrock")
 plt.xlabel("x")
 plt.ylabel("y")
